@@ -1,5 +1,4 @@
-#!/usr/bin/dash
-
+#!/usr/bin/bash
 if [[ $1 == '' ]]
 then
   echo -e "USAGE:\n ./gitbash.sh 'commit message'\n"
