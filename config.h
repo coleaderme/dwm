@@ -94,6 +94,8 @@ static const Layout layouts[] = {
 #define STACKKEYS(MOD,ACTION) \
     { MOD,	XK_j,	ACTION##stack,	{.i = INC(+1) } }, \
     { MOD,	XK_k,	ACTION##stack,	{.i = INC(-1) } }, \
+    { MOD,  XK_Tab,   ACTION##stack,  {.i = INC(+1) } }, \
+    { MOD|ShiftMask,  XK_Tab,   ACTION##stack,  {.i = INC(-1) } }, \
     { MOD,  XK_v,   ACTION##stack,  {.i = 0 } }, \
     /* { MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \ */
     /* { MOD, XK_a,     ACTION##stack, {.i = 1 } }, \ */
@@ -174,7 +176,7 @@ static const Key keys[] = {
     { MODKEY,			XK_o,		incnmaster,     {.i = +1 } },
     { MODKEY|ShiftMask,		XK_o,		incnmaster,     {.i = -1 } },
     { MODKEY,			XK_p,			spawn,		{.v = (const char*[]){ "mpc", "toggle", NULL } } },
-    { MODKEY|ShiftMask,		XK_p,			spawn,		SHCMD("mpc pause; pauseallmpv") },
+    // { MODKEY|ShiftMask,		XK_p,			spawn,		SHCMD("mpc pause; pauseallmpv") },
     { MODKEY,			XK_bracketleft,		spawn,		{.v = (const char*[]){ "mpc", "seek", "-10", NULL } } },
     { MODKEY|ShiftMask,		XK_bracketleft,		spawn,		{.v = (const char*[]){ "mpc", "seek", "-60", NULL } } },
     { MODKEY,			XK_bracketright,	spawn,		{.v = (const char*[]){ "mpc", "seek", "+10", NULL } } },
@@ -207,8 +209,8 @@ static const Key keys[] = {
     /* { MODKEY|ShiftMask,		XK_z,		spawn,		SHCMD("") }, */
     { MODKEY,			XK_x,		incrgaps,	{.i = -3 } },
     /* { MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("") }, */
-    { MODKEY,			XK_c,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "profanity", NULL } } },
-    /* { MODKEY|ShiftMask,		XK_c,		spawn,		SHCMD("") }, */
+    
+    { MODKEY,		XK_c,		spawn,		SHCMD("clipmenu") }, 
     /* V is automatically bound above in STACKKEYS */
     { MODKEY,			XK_b,		togglebar,	{0} },
     /* { MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("") }, */
