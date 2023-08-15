@@ -212,7 +212,9 @@ static const Key keys[] = {
     { MODKEY,			XK_x,		incrgaps,	{.i = -3 } },
     /* { MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("") }, */
     
-    { MODKEY,		XK_c,		spawn,		SHCMD("clipmenu") }, 
+    { MODKEY,		XK_c,		spawn,		SHCMD("clipmenu") },
+    { ControlMask,  XK_KP_3, spawn,      SHCMD("chromium") },
+    { ControlMask,  XK_KP_2, spawn,      SHCMD("thunar ~/Downloads") },
     /* V is automatically bound above in STACKKEYS */
     { MODKEY,			XK_b,		togglebar,	{0} },
     /* { MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("") }, */
@@ -258,7 +260,6 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,	XK_Print,	spawn,		{.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
     { MODKEY,			XK_Delete,	spawn,		{.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
     { MODKEY,			XK_Scroll_Lock,	spawn,		SHCMD("killall screenkey || screenkey &") },
-
     { 0, XF86XK_AudioMute,		    spawn,		SHCMD("amixer set Master toggle; kill -44 $(pidof dwmblocks)") },
     { 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("amixer set Master 1+; kill -44 $(pidof dwmblocks)") },
     { 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("amixer set Master 1-; kill -44 $(pidof dwmblocks)") },
