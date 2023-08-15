@@ -213,8 +213,6 @@ static const Key keys[] = {
     /* { MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("") }, */
     
     { MODKEY,		XK_c,		spawn,		SHCMD("clipmenu") },
-    { ControlMask,  XK_KP_3, spawn,      SHCMD("chromium") },
-    { ControlMask,  XK_KP_2, spawn,      SHCMD("thunar ~/Downloads") },
     /* V is automatically bound above in STACKKEYS */
     { MODKEY,			XK_b,		togglebar,	{0} },
     /* { MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("") }, */
