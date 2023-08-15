@@ -203,6 +203,7 @@ static const Key keys[] = {
     /* { MODKEY|ShiftMask,		XK_apostrophe,	spawn,		SHCMD("") }, */
     { MODKEY|ShiftMask,		XK_apostrophe,	togglesmartgaps,	{0} },
     { MODKEY,			XK_Return,	spawn,		{.v = termcmd } },
+    { Mod1Mask,           XK_Return,  spawn,      {.v = termcmd } },
     { MODKEY|ShiftMask,		XK_Return,	togglescratch,	{.ui = 0} },
 
     { MODKEY,			XK_z,		incrgaps,	{.i = +3 } },
