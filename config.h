@@ -192,9 +192,9 @@ static const Key keys[] = {
     { MODKEY,			XK_d,		spawn,          {.v = (const char*[]){ "dmenu_run", NULL } } },
     { MODKEY|ShiftMask,		XK_d,		spawn,		{.v = (const char*[]){ "passmenu", NULL } } },
     { MODKEY,			XK_f,		togglefullscr,	{0} },
-    { MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
-    { MODKEY,			XK_g,		shiftview,	{ .i = -1 } },
-    { MODKEY|ShiftMask,		XK_g,		shifttag,	{ .i = -1 } },
+    // { MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
+    // { MODKEY,			XK_g,		shiftview,	{ .i = -1 } },
+    // { MODKEY|ShiftMask,		XK_g,		shifttag,	{ .i = -1 } },
     { MODKEY,			XK_h,		setmfact,	{.f = -0.05} },
     /* J and K are automatically bound above in STACKEYS */
     { MODKEY,			XK_l,		setmfact,      	{.f = +0.05} },
@@ -234,7 +234,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,		XK_Page_Up,	shifttag,	{ .i = -1 } },
     { MODKEY,			XK_Page_Down,	shiftview,	{ .i = +1 } },
     { MODKEY|ShiftMask,		XK_Page_Down,	shifttag,	{ .i = +1 } },
-    { MODKEY,			XK_Insert,	spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
+    // { MODKEY,			XK_Insert,	spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
 
     // { MODKEY,			XK_F1,		spawn,		SHCMD("groff -mom /usr/local/share/dwm/larbs.mom -Tpdf | zathura -") },
     { MODKEY,			XK_F2,		spawn,		{.v = (const char*[]){ "tutorialvids", NULL } } },
