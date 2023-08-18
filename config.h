@@ -4,6 +4,7 @@
 #define TERMINAL "st"
 #define TERMCLASS "St"
 #define BROWSER "chromium"
+#define FILE_EXPLORER "thunar"
 
 /* appearance */
 static unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -162,6 +163,7 @@ static const Key keys[] = {
     { MODKEY,			XK_q,		killclient,	{0} },
     // { MODKEY|ShiftMask,		XK_q,		spawn,		{.v = (const char*[]){ "sysact", NULL } } },
     { MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
+    { MODKEY,           XK_e,       spawn,      {.v = (const char*[]){ FILE_EXPLORER, NULL } } },
     // { MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "sudo", "nmtui", NULL } } },
     // { MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook 2>/dev/null") },
     // { MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD(TERMINAL " -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
@@ -196,8 +198,10 @@ static const Key keys[] = {
     // { MODKEY,			XK_g,		shiftview,	{ .i = -1 } },
     // { MODKEY|ShiftMask,		XK_g,		shifttag,	{ .i = -1 } },
     { MODKEY,			XK_h,		setmfact,	{.f = -0.05} },
+    { MODKEY,           XK_Left,       setmfact,   {.f = -0.05} },
     /* J and K are automatically bound above in STACKEYS */
     { MODKEY,			XK_l,		setmfact,      	{.f = +0.05} },
+    { MODKEY,           XK_Right,       setmfact,       {.f = +0.05} },
     { MODKEY,			XK_semicolon,	shiftview,	{ .i = 1 } },
     { MODKEY|ShiftMask,		XK_semicolon,	shifttag,	{ .i = 1 } },
     { MODKEY,			XK_apostrophe,	togglescratch,	{.ui = 1} },
