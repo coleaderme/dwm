@@ -95,8 +95,8 @@ static const Layout layouts[] = {
     { MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 #define STACKKEYS(MOD,ACTION) \
     { MOD,	XK_j,	ACTION##stack,	{.i = INC(+1) } }, \
-    { MOD,	XK_k,	ACTION##stack,	{.i = INC(-1) } }, \
     { MOD,  XK_Tab,   ACTION##stack,  {.i = INC(+1) } }, \
+    { MOD,	XK_k,	ACTION##stack,	{.i = INC(-1) } }, \
     { MOD|ShiftMask,  XK_Tab,   ACTION##stack,  {.i = INC(-1) } }, \
     { MOD,  XK_v,   ACTION##stack,  {.i = 0 } }, \
     /* { MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \ */
@@ -145,20 +145,20 @@ static const Key keys[] = {
     /* { MODKEY|ShiftMask,		XK_Escape,	spawn,	SHCMD("") }, */
     { MODKEY,			XK_grave,	spawn,	{.v = (const char*[]){ "dmenuunicode", NULL } } },
     /* { MODKEY|ShiftMask,		XK_grave,	togglescratch,	SHCMD("") }, */
-    TAGKEYS(			XK_1,		0)
-    TAGKEYS(			XK_2,		1)
-    TAGKEYS(			XK_3,		2)
-    TAGKEYS(			XK_4,		3)
-    TAGKEYS(			XK_5,		4)
-    TAGKEYS(			XK_6,		5)
-    TAGKEYS(			XK_7,		6)
-    TAGKEYS(			XK_8,		7)
-    TAGKEYS(			XK_9,		8)
-    { MODKEY,			XK_0,		view,		{.ui = ~0 } },
-    { MODKEY|ShiftMask,		XK_0,		        tag,		{.ui = ~0 } },
-    { MODKEY,			    XK_BackSpace,	    spawn,		{.v = (const char*[]){ "sysact", NULL } } },
-    { MODKEY|ShiftMask,		XK_BackSpace,	    spawn,		{.v = (const char*[]){ "sysact", NULL } } },
-    { MODKEY,			XK_Tab,		view,		{0} },
+    // TAGKEYS(			XK_1,		0)
+    // TAGKEYS(			XK_2,		1)
+    // TAGKEYS(			XK_3,		2)
+    // TAGKEYS(			XK_4,		3)
+    // TAGKEYS(			XK_5,		4)
+    // TAGKEYS(			XK_6,		5)
+    // TAGKEYS(			XK_7,		6)
+    // TAGKEYS(			XK_8,		7)
+    // TAGKEYS(			XK_9,		8)
+    // { MODKEY,			XK_0,		view,		{.ui = ~0 } },
+    // { MODKEY|ShiftMask,		XK_0,		        tag,		{.ui = ~0 } },
+    // { MODKEY,			    XK_BackSpace,	    spawn,		{.v = (const char*[]){ "sysact", NULL } } },
+    // { MODKEY|ShiftMask,		XK_BackSpace,	    spawn,		{.v = (const char*[]){ "sysact", NULL } } },
+    // { MODKEY,			XK_Tab,		view,		{0} },
     /* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
     { MODKEY,			XK_q,		killclient,	{0} },
     // { MODKEY|ShiftMask,		XK_q,		spawn,		{.v = (const char*[]){ "sysact", NULL } } },
@@ -192,7 +192,7 @@ static const Key keys[] = {
     { MODKEY,			XK_s,		togglesticky,	{0} },
     /* { MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("") }, */
     { MODKEY,			XK_d,		spawn,          {.v = (const char*[]){ "dmenu_run", NULL } } },
-    { MODKEY|ShiftMask,		XK_d,		spawn,		{.v = (const char*[]){ "passmenu", NULL } } },
+    // { MODKEY|ShiftMask,		XK_d,		spawn,		{.v = (const char*[]){ "passmenu", NULL } } },
     { MODKEY,			XK_f,		togglefullscr,	{0} },
     // { MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
     // { MODKEY,			XK_g,		shiftview,	{ .i = -1 } },
@@ -241,15 +241,15 @@ static const Key keys[] = {
     // { MODKEY,			XK_Insert,	spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
 
     // { MODKEY,			XK_F1,		spawn,		SHCMD("groff -mom /usr/local/share/dwm/larbs.mom -Tpdf | zathura -") },
-    { MODKEY,			XK_F2,		spawn,		{.v = (const char*[]){ "tutorialvids", NULL } } },
-    { MODKEY,			XK_F3,		spawn,		{.v = (const char*[]){ "displayselect", NULL } } },
+    // { MODKEY,			XK_F2,		spawn,		{.v = (const char*[]){ "tutorialvids", NULL } } },
+    // { MODKEY,			XK_F3,		spawn,		{.v = (const char*[]){ "displayselect", NULL } } },
     // { MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
     { MODKEY,			XK_F5,		xrdb,		{.v = NULL } },
-    { MODKEY,			XK_F6,		spawn,		{.v = (const char*[]){ "torwrap", NULL } } },
-    { MODKEY,			XK_F7,		spawn,		{.v = (const char*[]){ "td-toggle", NULL } } },
-    { MODKEY,			XK_F8,		spawn,		{.v = (const char*[]){ "mailsync", NULL } } },
-    { MODKEY,			XK_F9,		spawn,		{.v = (const char*[]){ "mounter", NULL } } },
-    { MODKEY,			XK_F10,		spawn,		{.v = (const char*[]){ "unmounter", NULL } } },
+    // { MODKEY,			XK_F6,		spawn,		{.v = (const char*[]){ "torwrap", NULL } } },
+    // { MODKEY,			XK_F7,		spawn,		{.v = (const char*[]){ "td-toggle", NULL } } },
+    // { MODKEY,			XK_F8,		spawn,		{.v = (const char*[]){ "mailsync", NULL } } },
+    // { MODKEY,			XK_F9,		spawn,		{.v = (const char*[]){ "mounter", NULL } } },
+    // { MODKEY,			XK_F10,		spawn,		{.v = (const char*[]){ "unmounter", NULL } } },
     { MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
     { MODKEY,			XK_F12,		spawn,		SHCMD("remaps") },
     { MODKEY,			XK_space,	zoom,		{0} },
