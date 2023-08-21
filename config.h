@@ -168,14 +168,14 @@ static const Key keys[] = {
     // { MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook 2>/dev/null") },
     // { MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD(TERMINAL " -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
     { MODKEY,			XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
-    { MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} }, /* tile */
-    { MODKEY|ShiftMask,		XK_t,		setlayout,	{.v = &layouts[1]} }, /* bstack */
-    { MODKEY,			XK_y,		setlayout,	{.v = &layouts[2]} }, /* spiral */
-    { MODKEY|ShiftMask,		XK_y,		setlayout,	{.v = &layouts[3]} }, /* dwindle */
-    { MODKEY,			XK_u,		setlayout,	{.v = &layouts[4]} }, /* deck */
-    { MODKEY|ShiftMask,		XK_u,		setlayout,	{.v = &layouts[5]} }, /* monocle */
-    { MODKEY,			XK_i,		setlayout,	{.v = &layouts[6]} }, /* centeredmaster */
-    { MODKEY|ShiftMask,		XK_i,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
+    // { MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} }, /* tile */
+    // { MODKEY|ShiftMask,		XK_t,		setlayout,	{.v = &layouts[1]} }, /* bstack */
+    // { MODKEY,			XK_y,		setlayout,	{.v = &layouts[2]} }, /* spiral */
+    // { MODKEY|ShiftMask,		XK_y,		setlayout,	{.v = &layouts[3]} }, /* dwindle */
+    // { MODKEY,			XK_u,		setlayout,	{.v = &layouts[4]} }, /* deck */
+    // { MODKEY|ShiftMask,		XK_u,		setlayout,	{.v = &layouts[5]} }, /* monocle */
+    // { MODKEY,			XK_i,		setlayout,	{.v = &layouts[6]} }, /* centeredmaster */
+    // { MODKEY|ShiftMask,		XK_i,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
     { MODKEY,			XK_o,		incnmaster,     {.i = +1 } },
     { MODKEY|ShiftMask,		XK_o,		incnmaster,     {.i = -1 } },
     // { MODKEY,			XK_p,			spawn,		{.v = (const char*[]){ "mpc", "toggle", NULL } } },
