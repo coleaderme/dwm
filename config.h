@@ -97,7 +97,6 @@ static const Layout layouts[] = {
     { MOD,	XK_j,	ACTION##stack,	{.i = INC(+1) } }, \
     { MOD,  XK_Tab,   ACTION##stack,  {.i = INC(+1) } }, \
     { MOD,	XK_k,	ACTION##stack,	{.i = INC(-1) } }, \
-    { MOD|ShiftMask,  XK_Tab,   ACTION##stack,  {.i = INC(-1) } }, \
     { MOD,  XK_v,   ACTION##stack,  {.i = 0 } }, \
     /* { MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \ */
     /* { MOD, XK_a,     ACTION##stack, {.i = 1 } }, \ */
@@ -238,8 +237,6 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,		XK_Page_Up,	shifttag,	{ .i = -1 } },
     { MODKEY,			XK_Page_Down,	shiftview,	{ .i = +1 } },
     { MODKEY|ShiftMask,		XK_Page_Down,	shifttag,	{ .i = +1 } },
-    // { MODKEY,			XK_Insert,	spawn,		SHCMD("xdotool type $(grep -v '^#' ~/.local/share/larbs/snippets | dmenu -i -l 50 | cut -d' ' -f1)") },
-
     // { MODKEY,			XK_F1,		spawn,		SHCMD("groff -mom /usr/local/share/dwm/larbs.mom -Tpdf | zathura -") },
     // { MODKEY,			XK_F2,		spawn,		{.v = (const char*[]){ "tutorialvids", NULL } } },
     // { MODKEY,			XK_F3,		spawn,		{.v = (const char*[]){ "displayselect", NULL } } },
@@ -257,7 +254,7 @@ static const Key keys[] = {
 
     // { 0,				XK_Print,	spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
     // { ShiftMask,		XK_Print,	spawn,		{.v = (const char*[]){ "maimpick", NULL } } },
-    { 0,                XK_Print,   spawn,      SHCMD("scrot ~/Pictures/ss_$(date '+%Y%m%d%H%M%S').png") },
+    { MODKEY,           XK_Insert,   spawn,      SHCMD("scrot ~/Pictures/ss_$(date '+%Y%m%d%H%M%S').png") },
     { MODKEY,			XK_Print,	spawn,		{.v = (const char*[]){ "dmenurecord", NULL } } },
     { MODKEY|ShiftMask,	XK_Print,	spawn,		{.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
     { MODKEY,			XK_Delete,	spawn,		{.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
@@ -336,4 +333,3 @@ static const Button buttons[] = {
     { ClkTagBar,		0,		Button5,	shiftview,	{.i = 1} },
     { ClkRootWin,		0,		Button2,	togglebar,	{0} },
 };
-
