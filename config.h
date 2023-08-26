@@ -161,8 +161,17 @@ static const Key keys[] = {
     /* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
     { MODKEY,			XK_q,		killclient,	{0} },
     // { MODKEY|ShiftMask,		XK_q,		spawn,		{.v = (const char*[]){ "sysact", NULL } } },
-    { MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
+
+
+    // Launching Programs Win + Numpad
+    /* use `xev` with numlock off, then see outputs of KP presses*/
+    { MODKEY,			XK_KP_Next,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
+    { MODKEY,           XK_KP_Up,       spawn,      {.v = (const char*[]){ "telegram-desktop", NULL } } },
+    { MODKEY,           XK_KP_End,       spawn,      {.v = (const char*[]){ "google-chrome-stable", NULL } } },
+    { MODKEY,           XK_KP_Right,       spawn,      {.v = (const char*[]){ "subl", NULL } } },
     { MODKEY,           XK_e,       spawn,      {.v = (const char*[]){ FILE_EXPLORER, NULL } } },
+    { MODKEY,           XK_KP_Down,       spawn,      {.v = (const char*[]){ FILE_EXPLORER,"Downloads", NULL } } },
+    { MODKEY,           XK_KP_Left,       spawn,      {.v = (const char*[]){ FILE_EXPLORER,"Pictures", NULL } } },
     // { MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "sudo", "nmtui", NULL } } },
     // { MODKEY,			XK_e,		spawn,		SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook 2>/dev/null") },
     // { MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD(TERMINAL " -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
