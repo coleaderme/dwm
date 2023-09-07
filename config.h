@@ -3,7 +3,8 @@
 /* Constants */
 #define TERMINAL "st"
 #define TERMCLASS "St"
-#define BROWSER "chromium"
+#define BROWSER "brave"
+#define EDITOR "subl"
 #define FILE_EXPLORER "thunar"
 
 /* appearance */
@@ -167,8 +168,8 @@ static const Key keys[] = {
     /* use `xev` with numlock off, then see outputs of KP presses*/
     { MODKEY,			XK_KP_Next,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
     { MODKEY,           XK_KP_Up,       spawn,      {.v = (const char*[]){ "telegram-desktop", NULL } } },
-    { MODKEY,           XK_KP_End,       spawn,      {.v = (const char*[]){ "google-chrome-stable", NULL } } },
-    { MODKEY,           XK_KP_Right,       spawn,      {.v = (const char*[]){ "subl", NULL } } },
+    { MODKEY,           XK_KP_Prior,       spawn,      {.v = (const char*[]){ "google-chrome-stable", NULL } } },
+    { MODKEY,           XK_KP_Right,       spawn,      {.v = (const char*[]){ EDITOR, NULL } } },
     { MODKEY,           XK_e,       spawn,      {.v = (const char*[]){ FILE_EXPLORER, NULL } } },
     { MODKEY,           XK_KP_Down,       spawn,      {.v = (const char*[]){ FILE_EXPLORER,"Downloads", NULL } } },
     { MODKEY,           XK_KP_Left,       spawn,      {.v = (const char*[]){ FILE_EXPLORER,"Pictures", NULL } } },
