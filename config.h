@@ -3,6 +3,7 @@
 /* Constants */
 #define TERMINAL "st"
 #define TERMINAL2 "xfce4-terminal"
+/* added second terminal */
 #define TERMCLASS "St"
 #define BROWSER "brave"
 #define EDITOR "subl"
