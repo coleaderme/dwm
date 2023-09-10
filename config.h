@@ -1,8 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
 /* Constants */
-// #define TERMINAL "st"
-#define TERMINAL "xfce4-terminal"
+#define TERMINAL "st"
+#define TERMINAL2 "xfce4-terminal"
 #define TERMCLASS "St"
 #define BROWSER "brave"
 #define EDITOR "subl"
@@ -110,6 +110,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *termcmd[]  = { TERMINAL, NULL };
+static const char *termcmd2[]  = { TERMINAL2, NULL };
 
 /*
  * Xresources preferences to load at startup
@@ -217,7 +218,7 @@ static const Key keys[] = {
     { MODKEY,			XK_apostrophe,	togglescratch,	{.ui = 1} },
     /* { MODKEY|ShiftMask,		XK_apostrophe,	spawn,		SHCMD("") }, */
     { MODKEY|ShiftMask,		XK_apostrophe,	togglesmartgaps,	{0} },
-    { MODKEY,			XK_Return,	spawn,		{.v = termcmd } },
+    { MODKEY,			XK_Return,	spawn,		{.v = termcmd2 } },
     { Mod1Mask,           XK_Return,  spawn,      {.v = termcmd } },
     { MODKEY|ShiftMask,		XK_Return,	togglescratch,	{.ui = 0} },
 
