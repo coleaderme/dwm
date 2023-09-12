@@ -168,8 +168,10 @@ static const Key keys[] = {
 
 
     // Launching Programs Win + Numpad
+
     /* use `xev` with numlock off, then see outputs of KP presses*/
     { MODKEY,			XK_KP_Next,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
+    { MODKEY,           XK_KP_Home,     spawn,      {.v = (const char*[]){ "apulse firefox", NULL } } },
     { MODKEY,           XK_KP_Up,       spawn,      {.v = (const char*[]){ "telegram-desktop", NULL } } },
     { MODKEY,           XK_KP_Prior,       spawn,      {.v = (const char*[]){ "google-chrome-stable", NULL } } },
     { MODKEY,           XK_KP_Right,       spawn,      {.v = (const char*[]){ EDITOR, NULL } } },
