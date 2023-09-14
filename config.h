@@ -20,12 +20,12 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 0;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = { "monospace:size=10", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"  };
+static char *fonts[]          = { "InconsolataSemiCondensedBold:size=10:antialias=true:autohint=true"  };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#770000";
+static char selbordercolor[]        = "##2596be"; // blue Selected border highlight
 static char selbgcolor[]            = "#005577";
 static char *colors[][3] = {
        /*               fg           bg           border   */
@@ -171,7 +171,6 @@ static const Key keys[] = {
 
     /* use `xev` with numlock off, then see outputs of KP presses*/
     { MODKEY,			XK_KP_Next,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
-    { MODKEY,           XK_KP_Home,     spawn,      {.v = (const char*[]){ "apulse firefox", NULL } } },
     { MODKEY,           XK_KP_Up,       spawn,      {.v = (const char*[]){ "telegram-desktop", NULL } } },
     { MODKEY,           XK_KP_Prior,       spawn,      {.v = (const char*[]){ "google-chrome-stable", NULL } } },
     { MODKEY,           XK_KP_Right,       spawn,      {.v = (const char*[]){ EDITOR, NULL } } },
