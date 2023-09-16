@@ -110,8 +110,8 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[]  = { TERMINAL, NULL };
-static const char *termcmd2[]  = { TERMINAL2, NULL };
+static const char *termcmd[]  = { TERMINAL, NULL }; /* st */
+static const char *termcmd2[]  = { TERMINAL2, NULL }; /* xfce4-terminal */
 
 /*
  * Xresources preferences to load at startup
