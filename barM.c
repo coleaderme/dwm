@@ -32,7 +32,7 @@
  */
 
 #define VERSION "0.12"
-#define TIME_FORMAT "%I:%M) (%a_%d-%m-%Y"
+#define TIME_FORMAT "%I:%M) (%a %d-%m-%Y"
 #define MAXSTR  1024
 
 static const char * date(void);
