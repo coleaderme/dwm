@@ -2,7 +2,7 @@
 
 /* Constants */
 #define TERMINAL "st"
-#define TERMINAL2 "xfce4-terminal"
+#define TERMINAL2 "st" /* xfce4-terminal can be added as 2nd terminal */
 /* added second terminal */
 #define TERMCLASS "St"
 #define BROWSER "brave"
@@ -103,7 +103,7 @@ static const Layout layouts[] = {
     { MOD,  XK_Tab,    ACTION##stack,  {.i = INC(+1) } }, \
     { MOD|ShiftMask,	XK_Tab,	ACTION##stack,	{.i = INC(-1) } }, \
     { MOD,    XK_k, ACTION##stack,  {.i = INC(-1) } }, \
-    { MOD,  XK_v,   ACTION##stack,  {.i = 0 } }, \
+    // { MOD,  XK_v,   ACTION##stack,  {.i = 0 } }, \
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -165,8 +165,8 @@ static const Key keys[] = {
     { MODKEY,       XK_KP_Prior,spawn,      {.v = (const char*[]){ "google-chrome-stable", NULL } } }, /* Mod + KP9 */
     { MODKEY,       XK_KP_Right,spawn,      {.v = (const char*[]){ EDITOR, NULL } } }, /* Mod + KP6 */
     { MODKEY,       XK_e,       spawn,      {.v = (const char*[]){ FILE_EXPLORER, NULL } } },
-    { MODKEY,       XK_KP_Down, spawn,      {.v = (const char*[]){ FILE_EXPLORER,"~/Downloads/", NULL } } }, /* Mod + KP2 */
-    { MODKEY,       XK_KP_Left, spawn,      {.v = (const char*[]){ FILE_EXPLORER,"~/Pictures/", NULL } } }, /* Mod + KP4 */
+    { MODKEY,       XK_KP_Down, spawn,      {.v = (const char*[]){ FILE_EXPLORER,"Downloads", NULL } } }, /* Mod + KP2 */
+    { MODKEY,       XK_KP_Left, spawn,      {.v = (const char*[]){ FILE_EXPLORER,"Pictures", NULL } } }, /* Mod + KP4 */
     { MODKEY,		XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
     { MODKEY,		XK_d,		spawn,      {.v = (const char*[]){ "dmenu_run", "-fn", dmenufont, NULL } } },
     { MODKEY,		XK_f,		togglefullscr,	{0} },
@@ -177,6 +177,7 @@ static const Key keys[] = {
     { MODKEY,		XK_c,		spawn,		    {.v = (const char*[]){ "clipmenu", NULL } } },
     { MODKEY,       XK_m,       spawn,          SHCMD("~/scripts/play_media.sh")},
     { MODKEY,       XK_b,       spawn,          SHCMD("~/scripts/ytdl.sh")},
+    { ControlMask,  XK_space,   spawn,          SHCMD("~/scripts/search.sh")},
 
     /* V is automatically bound above in STACKKEYS */
     // { MODKEY,			XK_b,		togglebar,	{0} },
