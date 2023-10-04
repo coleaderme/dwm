@@ -5,7 +5,7 @@
 #define TERMINAL2 "st" /* xfce4-terminal can be added as 2nd terminal */
 /* added second terminal */
 #define TERMCLASS "St"
-#define BROWSER "brave"
+#define BROWSER "chromium"
 #define EDITOR "subl"
 #define FILE_EXPLORER "thunar"
 
@@ -162,6 +162,7 @@ static const Key keys[] = {
     { MODKEY,		XK_q,		killclient,	{0} },
     { MODKEY,		XK_KP_Next,	spawn,		{.v = (const char*[]){ BROWSER, NULL } } }, /* Mod + KP3 */
     { MODKEY,       XK_KP_Up,   spawn,      {.v = (const char*[]){ "telegram-desktop", NULL } } }, /* Mod + KP8 */
+    { MODKEY,       XK_KP_Home,   spawn,      {.v = (const char*[]){ "apulse","firefox", NULL } } }, /* Mod + KP7 */
     { MODKEY,       XK_KP_Prior,spawn,      {.v = (const char*[]){ "google-chrome-stable", NULL } } }, /* Mod + KP9 */
     { MODKEY,       XK_KP_Right,spawn,      {.v = (const char*[]){ EDITOR, NULL } } }, /* Mod + KP6 */
     { MODKEY,       XK_e,       spawn,      {.v = (const char*[]){ FILE_EXPLORER, NULL } } },
@@ -181,8 +182,8 @@ static const Key keys[] = {
 
     /* V is automatically bound above in STACKKEYS */
     // { MODKEY,			XK_b,		togglebar,	{0} },
-    { MODKEY,			XK_comma,	spawn,		{.v = (const char*[]){ "mpv", "prev", NULL } } },
-    { MODKEY,			XK_period,	spawn,		{.v = (const char*[]){ "mpv", "next", NULL } } },
+   // { MODKEY,			XK_comma,	spawn,		{.v = (const char*[]){ "mpv", "prev", NULL } } },
+   // { MODKEY,			XK_period,	spawn,		{.v = (const char*[]){ "mpv", "next", NULL } } },
     { MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
     { MODKEY,			XK_Right,	focusmon,	{.i = +1 } },
     { MODKEY,			XK_F5,		xrdb,		{.v = NULL } },
