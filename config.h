@@ -176,14 +176,9 @@ static const Key keys[] = {
     { MODKEY,		XK_Return,	spawn,		{.v = termcmd2 } },
     { Mod1Mask,     XK_Return,spawn,        {.v = termcmd } },
     { MODKEY,		XK_c,		spawn,		    {.v = (const char*[]){ "clipmenu", NULL } } },
-    { MODKEY,       XK_m,       spawn,          SHCMD("~/scripts/play_media.sh")},
-    { MODKEY,       XK_b,       spawn,          SHCMD("~/scripts/ytdl.sh")},
+    // { MODKEY,       XK_m,       spawn,          SHCMD("~/scripts/play_media.sh")},
+    { MODKEY,       XK_l,       spawn,          SHCMD("~/scripts/ytdl.sh")},
     { ControlMask,  XK_space,   spawn,          SHCMD("~/scripts/search.sh")},
-
-    /* V is automatically bound above in STACKKEYS */
-    // { MODKEY,			XK_b,		togglebar,	{0} },
-   // { MODKEY,			XK_comma,	spawn,		{.v = (const char*[]){ "mpv", "prev", NULL } } },
-   // { MODKEY,			XK_period,	spawn,		{.v = (const char*[]){ "mpv", "next", NULL } } },
     { MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
     { MODKEY,			XK_Right,	focusmon,	{.i = +1 } },
     { MODKEY,			XK_F5,		xrdb,		{.v = NULL } },
