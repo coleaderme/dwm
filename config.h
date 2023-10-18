@@ -5,7 +5,7 @@
 #define TERMINAL2 "st" /* xfce4-terminal can be added as 2nd terminal */
 /* added second terminal */
 #define TERMCLASS "St"
-#define BROWSER "chromium"
+#define BROWSER "brave"
 #define EDITOR "subl"
 #define FILE_EXPLORER "thunar"
 
@@ -161,8 +161,9 @@ static const Key keys[] = {
     /* use `xev` with numlock off, then see outputs of KP presses*/
     { MODKEY,		XK_q,		killclient,	{0} },
     { MODKEY,		XK_KP_Next,	spawn,		{.v = (const char*[]){ BROWSER, NULL } } }, /* Mod + KP3 */
-    { MODKEY,       XK_KP_Up,   spawn,      {.v = (const char*[]){ "telegram-desktop", NULL } } }, /* Mod + KP8 */
-    { MODKEY,       XK_KP_Home,   spawn,      {.v = (const char*[]){ "apulse","firefox", NULL } } }, /* Mod + KP7 */
+    { MODKEY,       XK_w,       spawn,      {.v = (const char*[]){ BROWSER, NULL } } }, /* Mod + KP3 */
+    { MODKEY,       XK_KP_Up,   spawn,      {.v = (const char*[]){ "/home/dra/Downloads/Kotatogram/Kotatogram", NULL } } }, /* Mod + KP8 */
+    { MODKEY,       XK_KP_Home, spawn,      {.v = (const char*[]){ "firefox", NULL } } }, /* Mod + KP7 */
     { MODKEY,       XK_KP_Prior,spawn,      {.v = (const char*[]){ "google-chrome-stable", NULL } } }, /* Mod + KP9 */
     { MODKEY,       XK_KP_Right,spawn,      {.v = (const char*[]){ EDITOR, NULL } } }, /* Mod + KP6 */
     { MODKEY,       XK_e,       spawn,      {.v = (const char*[]){ FILE_EXPLORER, NULL } } },
@@ -174,7 +175,7 @@ static const Key keys[] = {
     { MODKEY,       XK_Left,    setmfact,   {.f = -0.05} },
     { MODKEY,       XK_Right,   setmfact,   {.f = +0.05} },
     { MODKEY,		XK_Return,	spawn,		{.v = termcmd2 } },
-    { Mod1Mask,     XK_Return,spawn,        {.v = termcmd } },
+    { Mod1Mask,     XK_Return,  spawn,        {.v = termcmd } },
     { MODKEY,		XK_c,		spawn,		    {.v = (const char*[]){ "clipmenu", NULL } } },
     { MODKEY,       XK_l,       spawn,          SHCMD("~/scripts/ytdl.sh")},
     { 0,            XK_F7,      spawn,          SHCMD("~/scripts/mountsd.sh")},
@@ -190,9 +191,14 @@ static const Key keys[] = {
     { Mod1Mask,          XK_backslash,spawn,    SHCMD("amixer set Master toggle") },
     { Mod1Mask, XK_bracketright,    spawn,      SHCMD("amixer set Master 1+") },
     { Mod1Mask, XK_bracketleft,     spawn,      SHCMD("amixer set Master 1-") },
-    { 0, XF86XK_AudioMute,		    spawn,		SHCMD("amixer set Master toggle") },
-    { 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("amixer set Master 1+") },
-    { 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("amixer set Master 1-") },
+    // { 0, XF86XK_AudioMute,		    spawn,		SHCMD("amixer set Master toggle") },
+    // { 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("amixer set Master 1+") },
+    // { 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("amixer set Master 1-") },
+    // PULSEAUDIO is nice for easy EQ and Audio redirection.
+    { MODKEY,           XK_u,      spawn,      {.v = (const char*[]){ "pulseaudio-equalizer-gtk", NULL } } },
+    { 0, XF86XK_AudioMute,          spawn,      SHCMD("amixer -q -D pulse sset Master toggle") },
+    { 0, XF86XK_AudioRaiseVolume,   spawn,      SHCMD("amixer -q -D pulse sset Master 1%+") },
+    { 0, XF86XK_AudioLowerVolume,   spawn,      SHCMD("amixer -q -D pulse sset Master 1%-") },
     // { MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
     // { MODKEY,			XK_F2,		spawn,		{.v = (const char*[]){ "tutorialvids", NULL } } },
     // { MODKEY,			XK_F3,		spawn,		{.v = (const char*[]){ "displayselect", NULL } } },
