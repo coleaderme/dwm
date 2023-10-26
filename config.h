@@ -5,7 +5,7 @@
 #define TERMINAL2 "st" /* xfce4-terminal can be added as 2nd terminal */
 /* added second terminal */
 #define TERMCLASS "St"
-#define BROWSER "brave"
+#define BROWSER "chromium"
 #define EDITOR "subl"
 #define FILE_EXPLORER "thunar"
 
@@ -191,14 +191,14 @@ static const Key keys[] = {
     { Mod1Mask,          XK_backslash,spawn,    SHCMD("amixer set Master toggle") },
     { Mod1Mask, XK_bracketright,    spawn,      SHCMD("amixer set Master 1+") },
     { Mod1Mask, XK_bracketleft,     spawn,      SHCMD("amixer set Master 1-") },
-    // { 0, XF86XK_AudioMute,		    spawn,		SHCMD("amixer set Master toggle") },
-    // { 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("amixer set Master 1+") },
-    // { 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("amixer set Master 1-") },
+    { 0, XF86XK_AudioMute,		    spawn,		SHCMD("amixer set Master toggle") },
+    { 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("amixer set Master 1+") },
+    { 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("amixer set Master 1-") },
     // PULSEAUDIO is nice for easy EQ and Audio redirection.
-    { MODKEY,           XK_u,      spawn,      {.v = (const char*[]){ "pulseaudio-equalizer-gtk", NULL } } },
-    { 0, XF86XK_AudioMute,          spawn,      SHCMD("amixer -q -D pulse sset Master toggle") },
-    { 0, XF86XK_AudioRaiseVolume,   spawn,      SHCMD("amixer -q -D pulse sset Master 1%+") },
-    { 0, XF86XK_AudioLowerVolume,   spawn,      SHCMD("amixer -q -D pulse sset Master 1%-") },
+    // { MODKEY,           XK_u,      spawn,      {.v = (const char*[]){ "pulseaudio-equalizer-gtk", NULL } } },
+    // { 0, XF86XK_AudioMute,          spawn,      SHCMD("amixer -q -D pulse sset Master toggle") },
+    // { 0, XF86XK_AudioRaiseVolume,   spawn,      SHCMD("amixer -q -D pulse sset Master 2%+") },
+    // { 0, XF86XK_AudioLowerVolume,   spawn,      SHCMD("amixer -q -D pulse sset Master 2%-") },
     // { MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
     // { MODKEY,			XK_F2,		spawn,		{.v = (const char*[]){ "tutorialvids", NULL } } },
     // { MODKEY,			XK_F3,		spawn,		{.v = (const char*[]){ "displayselect", NULL } } },
