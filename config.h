@@ -161,8 +161,8 @@ static const Key keys[] = {
     /* use `xev` with numlock off, then see outputs of KP presses*/
     { MODKEY,		XK_q,		killclient,	{0} },
     { MODKEY,		XK_KP_Next,	spawn,		{.v = (const char*[]){ BROWSER, NULL } } }, /* Mod + KP3 */
-    { MODKEY,       XK_w,       spawn,      {.v = (const char*[]){ BROWSER, NULL } } }, /* Mod + KP3 */
-    { MODKEY,       XK_KP_Up,   spawn,      {.v = (const char*[]){ "/home/dra/Downloads/Kotatogram/Kotatogram", NULL } } }, /* Mod + KP8 */
+    { MODKEY,       XK_w,       spawn,      {.v = (const char*[]){ BROWSER, NULL } } }, /* Mod + w */
+    { MODKEY,       XK_KP_Up,   spawn,      {.v = (const char*[]){ "/home/dra/64g/Telegram", NULL } } }, /* Mod + KP8 */
     { MODKEY,       XK_KP_Home, spawn,      {.v = (const char*[]){ "firefox", NULL } } }, /* Mod + KP7 */
     { MODKEY,       XK_KP_Prior,spawn,      {.v = (const char*[]){ "google-chrome-stable", NULL } } }, /* Mod + KP9 */
     { MODKEY,       XK_KP_Right,spawn,      {.v = (const char*[]){ EDITOR, NULL } } }, /* Mod + KP6 */
