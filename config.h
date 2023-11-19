@@ -5,7 +5,7 @@
 #define TERMINAL2 "st" /* xfce4-terminal can be added as 2nd terminal */
 /* added second terminal */
 #define TERMCLASS "St"
-#define BROWSER "chromium"
+#define BROWSER "thorium-browser-sse3"
 #define EDITOR "subl"
 #define FILE_EXPLORER "thunar"
 
@@ -22,12 +22,12 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]          = { "InconsolataSemiCondensedBold:size=12", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"  };
 static const char dmenufont[]       = "InconsolataSemiCondensedBold:size=12";
-static char normbgcolor[]           = "#222222";
+static char normbgcolor[]           = "#353535";
 static char normbordercolor[]       = "#444444";
-static char normfgcolor[]           = "#bbbbbb";
-static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#005577";
-static char selbgcolor[]            = "#005577";
+static char normfgcolor[]           = "#F8F8F2";
+static char selfgcolor[]            = "#F8F8F2";
+static char selbordercolor[]        = "#616161";
+static char selbgcolor[]            = "#616161";
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -145,7 +145,6 @@ static const Key keys[] = {
     STACKKEYS(MODKEY,                          focus)
     STACKKEYS(MODKEY|ShiftMask,                push)
     /* { MODKEY|ShiftMask,		XK_Escape,	spawn,	SHCMD("") }, */
-    // { MODKEY,			XK_grave,	spawn,	{.v = (const char*[]){ "dmenuunicode", NULL } } },
     /* { MODKEY|ShiftMask,		XK_grave,	togglescratch,	SHCMD("") }, */
     TAGKEYS(			XK_1,		0)
     TAGKEYS(			XK_2,		1)
@@ -160,16 +159,18 @@ static const Key keys[] = {
 
     /* use `xev` with numlock off, then see outputs of KP presses*/
     { MODKEY,		XK_q,		killclient,	{0} },
-    { MODKEY,		XK_KP_Next,	spawn,		{.v = (const char*[]){ BROWSER, NULL } } }, /* Mod + KP3 */
     { MODKEY,       XK_w,       spawn,      {.v = (const char*[]){ BROWSER, NULL } } }, /* Mod + w */
-    { MODKEY,       XK_KP_Up,   spawn,      {.v = (const char*[]){ "/home/dra/64g/Telegram", NULL } } }, /* Mod + KP8 */
-    { MODKEY,       XK_KP_Home, spawn,      {.v = (const char*[]){ "firefox", NULL } } }, /* Mod + KP7 */
-    { MODKEY,       XK_KP_Prior,spawn,      {.v = (const char*[]){ "google-chrome-stable", NULL } } }, /* Mod + KP9 */
-    { MODKEY,       XK_KP_Right,spawn,      {.v = (const char*[]){ EDITOR, NULL } } }, /* Mod + KP6 */
+    { ControlMask,		XK_KP_Next,	spawn,		{.v = (const char*[]){ BROWSER, NULL } } }, /* Mod + KP3 */
+    { ControlMask,       XK_KP_Up,   spawn,      {.v = (const char*[]){ "/home/dra/64g/Telegram", NULL } } }, /* Mod + KP8 */
+    { ControlMask,       XK_KP_Home, spawn,      {.v = (const char*[]){ "firefox", NULL } } }, /* Mod + KP7 */
+    { ControlMask,       XK_KP_End, spawn,      {.v = (const char*[]){ "audacious", NULL } } }, /* Mod + KP1 */
+    { ControlMask,       XK_KP_Prior,spawn,      {.v = (const char*[]){ "google-chrome-stable", NULL } } }, /* Mod + KP9 */
+    { ControlMask,       XK_KP_Right,spawn,      {.v = (const char*[]){ EDITOR, NULL } } }, /* Mod + KP6 */
     { MODKEY,       XK_e,       spawn,      {.v = (const char*[]){ FILE_EXPLORER, NULL } } },
-    { MODKEY,       XK_KP_Down, spawn,      {.v = (const char*[]){ FILE_EXPLORER,"Downloads", NULL } } }, /* Mod + KP2 */
-    { MODKEY,       XK_KP_Left, spawn,      {.v = (const char*[]){ FILE_EXPLORER,"Pictures", NULL } } }, /* Mod + KP4 */
+    { ControlMask,       XK_KP_Down, spawn,      {.v = (const char*[]){ FILE_EXPLORER,"Downloads", NULL } } }, /* Mod + KP2 */
+    { ControlMask,       XK_KP_Left, spawn,      {.v = (const char*[]){ FILE_EXPLORER,"Pictures", NULL } } }, /* Mod + KP4 */
     { MODKEY,		XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
+    { MODKEY,       XK_n,       spawn,      {.v = (const char*[]){ TERMINAL, "-e", "nano", "~/clipsave.txt", NULL } } },
     { MODKEY,		XK_d,		spawn,      {.v = (const char*[]){ "dmenu_run", "-fn", dmenufont, NULL } } },
     { MODKEY,		XK_f,		togglefullscr,	{0} },
     { MODKEY,       XK_Left,    setmfact,   {.f = -0.05} },
@@ -177,28 +178,31 @@ static const Key keys[] = {
     { MODKEY,		XK_Return,	spawn,		{.v = termcmd2 } },
     { Mod1Mask,     XK_Return,  spawn,        {.v = termcmd } },
     { MODKEY,		XK_c,		spawn,		    {.v = (const char*[]){ "clipmenu", NULL } } },
-    { MODKEY,       XK_l,       spawn,          SHCMD("~/scripts/ytdl.sh")},
-    { 0,            XK_F7,      spawn,          SHCMD("~/scripts/mountsd.sh")},
-    { ShiftMask,    XK_F7,      spawn,          SHCMD("~/scripts/umountsd.sh")},
-    { ControlMask,  XK_space,   spawn,          SHCMD("~/scripts/search.sh")},
+    { MODKEY,       XK_v,       spawn,          SHCMD("~/scripts/ytdl.sh")}, /* query + download video */
+    { MODKEY,       XK_x,       spawn,          SHCMD("~/scripts/ytx.sh")}, /* download audio */
+    { MODKEY,       XK_F7,      spawn,          SHCMD("~/scripts/mountsd.sh")},
+    { MODKEY|ShiftMask,  XK_F7,      spawn,          SHCMD("~/scripts/umountsd.sh")},
+    { Mod1Mask,     XK_space,   spawn,          SHCMD("~/scripts/search.sh")},
     { MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
     { MODKEY,			XK_Right,	focusmon,	{.i = +1 } },
     { MODKEY,			XK_F5,		xrdb,		{.v = NULL } },
     { MODKEY,			XK_space,	zoom,		{0} },
-    { MODKEY|ShiftMask,	XK_space,	togglefloating,	{0} },
-    /* Win + Printscreen -> Insert; workaround for KB with FN keys */
+    // { MODKEY|ShiftMask,	XK_space,	togglefloating,	{0} }, /* you can move/resize with MODKEY + left/right mouse button */
+    /* Win + Printscreen -> Insert; workaround for KeyBoard with FN keys, (DELL!!) */
     { MODKEY,           XK_Insert,  spawn,      SHCMD("scrot ~/Pictures/ss_$(date '+%Y%m%d%H%M%S').png") },
+    
     { Mod1Mask,          XK_backslash,spawn,    SHCMD("amixer set Master toggle") },
     { Mod1Mask, XK_bracketright,    spawn,      SHCMD("amixer set Master 1+") },
     { Mod1Mask, XK_bracketleft,     spawn,      SHCMD("amixer set Master 1-") },
     { 0, XF86XK_AudioMute,		    spawn,		SHCMD("amixer set Master toggle") },
     { 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("amixer set Master 1+") },
     { 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("amixer set Master 1-") },
-    // PULSEAUDIO is nice for easy EQ and Audio redirection.
+    /* PULSEAUDIO is nice for easy EQ and Audio redirection. */
     // { MODKEY,           XK_u,      spawn,      {.v = (const char*[]){ "pulseaudio-equalizer-gtk", NULL } } },
     // { 0, XF86XK_AudioMute,          spawn,      SHCMD("amixer -q -D pulse sset Master toggle") },
     // { 0, XF86XK_AudioRaiseVolume,   spawn,      SHCMD("amixer -q -D pulse sset Master 2%+") },
     // { 0, XF86XK_AudioLowerVolume,   spawn,      SHCMD("amixer -q -D pulse sset Master 2%-") },
+
     // { MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
     // { MODKEY,			XK_F2,		spawn,		{.v = (const char*[]){ "tutorialvids", NULL } } },
     // { MODKEY,			XK_F3,		spawn,		{.v = (const char*[]){ "displayselect", NULL } } },
