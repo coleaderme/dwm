@@ -5,7 +5,7 @@
 #define TERMINAL2 "st" /* xfce4-terminal can be added as 2nd terminal */
 /* added second terminal */
 #define TERMCLASS "St"
-#define BROWSER "thorium-browser-sse3"
+#define BROWSER "chromium"
 #define EDITOR "subl"
 #define FILE_EXPLORER "thunar"
 
@@ -177,11 +177,13 @@ static const Key keys[] = {
     { MODKEY,       XK_Right,   setmfact,   {.f = +0.05} },
     { MODKEY,		XK_Return,	spawn,		{.v = termcmd2 } },
     { Mod1Mask,     XK_Return,  spawn,        {.v = termcmd } },
-    { MODKEY,		XK_c,		spawn,		    {.v = (const char*[]){ "clipmenu", NULL } } },
+    // { MODKEY,		XK_c,		spawn,		    {.v = (const char*[]){ "clipmenu", NULL } } },
+    { MODKEY,       XK_c,       spawn,          SHCMD("~/scripts/clipman.sh")}, /* clip manager */
     { MODKEY,       XK_v,       spawn,          SHCMD("~/scripts/ytdl.sh")}, /* query + download video */
     { MODKEY,       XK_x,       spawn,          SHCMD("~/scripts/ytx.sh")}, /* download audio */
     { MODKEY,       XK_F7,      spawn,          SHCMD("~/scripts/mountsd.sh")},
-    { MODKEY|ShiftMask,  XK_F7,      spawn,          SHCMD("~/scripts/umountsd.sh")},
+    { MODKEY|ShiftMask,  XK_F7, spawn,          SHCMD("~/scripts/umountsd.sh")},
+    { MODKEY|ShiftMask,  XK_q,  spawn,          {.v = (const char*[]){ TERMINAL, "-e", "sh", "~/scripts/qr.sh", NULL } } },
     { Mod1Mask,     XK_space,   spawn,          SHCMD("~/scripts/search.sh")},
     { MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
     { MODKEY,			XK_Right,	focusmon,	{.i = +1 } },
@@ -194,6 +196,7 @@ static const Key keys[] = {
     { Mod1Mask,          XK_backslash,spawn,    SHCMD("amixer set Master toggle") },
     { Mod1Mask, XK_bracketright,    spawn,      SHCMD("amixer set Master 1+") },
     { Mod1Mask, XK_bracketleft,     spawn,      SHCMD("amixer set Master 1-") },
+    
     { 0, XF86XK_AudioMute,		    spawn,		SHCMD("amixer set Master toggle") },
     { 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("amixer set Master 1+") },
     { 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("amixer set Master 1-") },
