@@ -170,7 +170,7 @@ static const Key keys[] = {
     { ControlMask,       XK_KP_Down, spawn,      {.v = (const char*[]){ FILE_EXPLORER,"Downloads", NULL } } }, /* Mod + KP2 */
     { ControlMask,       XK_KP_Left, spawn,      {.v = (const char*[]){ FILE_EXPLORER,"Pictures", NULL } } }, /* Mod + KP4 */
     { MODKEY,		XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
-    { MODKEY,       XK_n,       spawn,      {.v = (const char*[]){ TERMINAL, "-e", "nano", "~/clipsave.txt", NULL } } },
+    { MODKEY,       XK_n,       spawn,      {.v = (const char*[]){ TERMINAL, "-e", "micro", "~/clipsave.txt", NULL } } },
     { MODKEY,		XK_d,		spawn,      {.v = (const char*[]){ "dmenu_run", "-fn", dmenufont, NULL } } },
     { MODKEY,		XK_f,		togglefullscr,	{0} },
     { MODKEY,       XK_Left,    setmfact,   {.f = -0.05} },
@@ -183,7 +183,7 @@ static const Key keys[] = {
     { MODKEY,       XK_x,       spawn,          SHCMD("~/scripts/ytx.sh")}, /* download audio */
     { MODKEY,       XK_F7,      spawn,          SHCMD("~/scripts/mountsd.sh")},
     { MODKEY|ShiftMask,  XK_F7, spawn,          SHCMD("~/scripts/umountsd.sh")},
-    { MODKEY|ShiftMask,  XK_q,  spawn,          {.v = (const char*[]){ TERMINAL, "-e", "sh", "~/scripts/qr.sh", NULL } } },
+    // { MODKEY|ShiftMask,  XK_q,  spawn,          {.v = (const char*[]){ TERMINAL, "-e", "sh", "~/scripts/qr.sh", NULL } } },
     { Mod1Mask,     XK_space,   spawn,          SHCMD("~/scripts/search.sh")},
     { MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
     { MODKEY,			XK_Right,	focusmon,	{.i = +1 } },
@@ -259,7 +259,7 @@ static const Button buttons[] = {
     { ClkStatusText,        0,              Button5,        sigdwmblocks,   {.i = 5} },
     { ClkStatusText,        ShiftMask,      Button1,        sigdwmblocks,   {.i = 6} },
 #endif
-    { ClkStatusText,        ShiftMask,      Button3,        spawn,          SHCMD(TERMINAL " -e nvim ~/.local/src/dwmblocks/config.h") },
+    // { ClkStatusText,        ShiftMask,      Button3,        spawn,          SHCMD(TERMINAL " -e nvim ~/.local/src/dwmblocks/config.h") },
     { ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
     { ClkClientWin,         MODKEY,         Button2,        defaultgaps,	{0} },
     { ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
