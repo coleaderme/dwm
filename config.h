@@ -20,7 +20,7 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = { "CaskaydiaCoveNerdFontPropo-Regular:size=10"  };
+static char *fonts[]          = { "CaskaydiaCoveNerdFontPropo-Regular:size=10"};
 static const char dmenufont[]       = "CaskaydiaCoveNerdFontPropo-Regular:size=10";
 static char normbgcolor[]           = "#353535";
 static char normbordercolor[]       = "#444444";
@@ -222,8 +222,8 @@ static const Key keys[] = {
     { 0, XF86XK_AudioPrev,		spawn,		{.v = (const char*[]){ "audacious", "--rew", NULL } } },
     { 0, XF86XK_AudioNext,		spawn,		{.v = (const char*[]){ "audacious",  "--fwd", NULL } } },
     // { 0, XF86XK_AudioPause,		spawn,		{.v = (const char*[]){ "mpc", "pause", NULL } } },
-    { 0, XF86XK_AudioPlay,		spawn,		{.v = (const char*[]){ "audacious", "-u", NULL } } },
-    { 0, XF86XK_AudioStop,		spawn,		{.v = (const char*[]){ "audacious", "--stop", NULL } } },
+    { 0, XF86XK_AudioPlay,		spawn,		{.v = (const char*[]){ "audacious", "--play-pause", NULL } } },
+    // { 0, XF86XK_AudioStop,		spawn,		{.v = (const char*[]){ "audacious", "--stop", NULL } } },
     // { 0, XF86XK_AudioRewind,	spawn,		{.v = (const char*[]){ "mpc", "seek", "-10", NULL } } },
     // { 0, XF86XK_AudioForward,	spawn,		{.v = (const char*[]){ "mpc", "seek", "+10", NULL } } },
     // { 0, XF86XK_AudioMedia,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
