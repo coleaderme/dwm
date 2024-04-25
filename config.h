@@ -19,7 +19,7 @@ static unsigned int gappov    = 0;        /* vert outer gap between windows and 
 static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
-static int topbar             = 0;        /* 0 means bottom bar */
+static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]                = { "Inconsolata-SemiCondensedSemiBold:style=Semi Condensed SemiBold:size=12:antialias=true:autohint=true" };
 static const char dmenufont[]       = "Inconsolata-SemiCondensedSemiBold:style=Semi Condensed SemiBold:size=12:antialias=true:autohint=true";
 static char normbgcolor[]           = "#353535";
