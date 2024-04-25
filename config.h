@@ -17,9 +17,9 @@ static unsigned int gappiv    = 0;        /* vert inner gap between windows */
 static unsigned int gappoh    = 0;        /* horiz outer gap between windows and screen edge */
 static unsigned int gappov    = 0;        /* vert outer gap between windows and screen edge */
 static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
-static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
+static int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
-static int topbar             = 1;        /* 0 means bottom bar */
+static int topbar             = 0;        /* 0 means bottom bar */
 static char *fonts[]                = { "Monospace:size=10"};
 static const char dmenufont[]       = "Monospace:size=10";
 static char normbgcolor[]           = "#353535";
