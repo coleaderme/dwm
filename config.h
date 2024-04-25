@@ -20,8 +20,8 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 0;        /* 0 means bottom bar */
-static char *fonts[]                = { "Inconsolata-SemiCondensedSemiBold:pixelsize=14"};
-static const char dmenufont[]       = "Inconsolata-SemiCondensedSemiBold:pixelsize=14";
+static char *fonts[]                = { "Inconsolata-SemiCondensedSemiBold:style=Semi Condensed SemiBold:size=12:antialias=true:autohint=true" };
+static const char dmenufont[]       = "Inconsolata-SemiCondensedSemiBold:style=Semi Condensed SemiBold:size=12:antialias=true:autohint=true";
 static char normbgcolor[]           = "#353535";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#F8F8F2";
