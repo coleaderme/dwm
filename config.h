@@ -2,12 +2,13 @@
 
 /* Constants */
 #define TERMINAL "st"
-#define TERMINAL2 "st" /* xfce4-terminal can be added as 2nd terminal */
-/* added second terminal */
+#define TERMINAL2 "xfce4-terminal" /* xfce4-terminal can be added as 2nd terminal */
 #define TERMCLASS "St"
 #define BROWSER "chromium"
 #define EDITOR "subl"
 #define FILE_EXPLORER "thunar"
+#define TERM_EDITOR "micro"
+// Iosevka-Medium.ttc: Iosevka Term,Iosevka Term Medium:style=Medium,Regular
 
 /* appearance */
 static unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -20,14 +21,14 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]                = { "Inconsolata-SemiCondensedSemiBold:style=Semi Condensed SemiBold:size=12:antialias=true:autohint=true" };
-static const char dmenufont[]       = "Inconsolata-SemiCondensedSemiBold:style=Semi Condensed SemiBold:size=12:antialias=true:autohint=true";
-static char normbgcolor[]           = "#353535";
-static char normbordercolor[]       = "#444444";
-static char normfgcolor[]           = "#F8F8F2";
-static char selfgcolor[]            = "#F8F8F2";
-static char selbordercolor[]        = "#616161";
-static char selbgcolor[]            = "#616161";
+static char *fonts[]                = { "Inconsolata-SemiCondensedSemiBold:style=Semi Condensed SemiBold:size=12:antialias=true:autohint=false" };
+static const char dmenufont[]       = "Inconsolata-SemiCondensedSemiBold:style=Semi Condensed SemiBold:size=12:antialias=true:autohint=false";
+static char normbgcolor[]           = "#2D2059"; /* accent color */
+static char normbordercolor[]       = "#505050"; /* inactive windows border */
+static char normfgcolor[]           = "#ffffff"; /* text on main color */
+static char selfgcolor[]            = "#ffffff"; /* text on accent color */
+static char selbordercolor[]        = "#A29AD9"; /* main border color */
+static char selbgcolor[]            = "#A29AD9"; /* main color */
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -162,7 +163,7 @@ static const Key keys[] = {
     { MODKEY,       XK_w,       spawn,      {.v = (const char*[]){ BROWSER, NULL } } }, /* Mod + w */
     { ControlMask,		XK_KP_Next,	spawn,		{.v = (const char*[]){ BROWSER, NULL } } }, /* Mod + KP3 */
     { ControlMask,       XK_KP_Up,   spawn,      {.v = (const char*[]){ "/home/dra/64g/Telegram", NULL } } }, /* Mod + KP8 */
-    { ControlMask,       XK_KP_Home, spawn,      {.v = (const char*[]){ "firefox", NULL } } }, /* Mod + KP7 */
+    { ControlMask,       XK_KP_Home, spawn,      {.v = (const char*[]){ "apulse","firefox-esr", NULL } } }, /* Mod + KP7 */
     { ControlMask,       XK_KP_End, spawn,      {.v = (const char*[]){ "audacious", NULL } } }, /* Mod + KP1 */
     { ControlMask,       XK_KP_Prior,spawn,      {.v = (const char*[]){ "google-chrome-stable", NULL } } }, /* Mod + KP9 */
     { ControlMask,       XK_KP_Right,spawn,      {.v = (const char*[]){ EDITOR, NULL } } }, /* Mod + KP6 */
@@ -170,7 +171,7 @@ static const Key keys[] = {
     { ControlMask,       XK_KP_Down, spawn,      {.v = (const char*[]){ FILE_EXPLORER,"Downloads", NULL } } }, /* Mod + KP2 */
     { ControlMask,       XK_KP_Left, spawn,      {.v = (const char*[]){ FILE_EXPLORER,"Pictures", NULL } } }, /* Mod + KP4 */
     { MODKEY,		XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
-    { MODKEY,       XK_n,       spawn,      {.v = (const char*[]){ TERMINAL, "-e", "micro", "~/clipsave.txt", NULL } } },
+    { MODKEY,       XK_n,       spawn,      {.v = (const char*[]){ TERMINAL, "-e", TERM_EDITOR, "~/clipsave.txt", NULL } } },
     { MODKEY,		XK_d,		spawn,      {.v = (const char*[]){ "dmenu_run", "-fn", dmenufont, NULL } } },
     { MODKEY,		XK_f,		togglefullscr,	{0} },
     { MODKEY,       XK_Left,    setmfact,   {.f = -0.05} },
@@ -185,6 +186,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,  XK_F7, spawn,          SHCMD("~/scripts/umountsd.sh")},
     // { MODKEY|ShiftMask,  XK_q,  spawn,          {.v = (const char*[]){ TERMINAL, "-e", "sh", "~/scripts/qr.sh", NULL } } },
     { Mod1Mask,     XK_space,   spawn,          SHCMD("~/scripts/search.sh")},
+    { Mod1Mask,     XK_f,       spawn,          SHCMD("~/scripts/google.sh")},
     { MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
     { MODKEY,			XK_Right,	focusmon,	{.i = +1 } },
     { MODKEY,			XK_F5,		xrdb,		{.v = NULL } },
