@@ -23,12 +23,12 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]                = { "Inconsolata-SemiCondensedSemiBold:style=Semi Condensed SemiBold:size=12:antialias=true:autohint=false" };
 static const char dmenufont[]       = "Inconsolata-SemiCondensedSemiBold:style=Semi Condensed SemiBold:size=12:antialias=true:autohint=false";
-static char normbgcolor[]           = "#2D2059"; /* accent color */
+static char normbgcolor[]           = "#151515"; /* accent color */
 static char normbordercolor[]       = "#505050"; /* inactive windows border */
-static char normfgcolor[]           = "#ffffff"; /* text on main color */
-static char selfgcolor[]            = "#ffffff"; /* text on accent color */
-static char selbordercolor[]        = "#A29AD9"; /* main border color */
-static char selbgcolor[]            = "#A29AD9"; /* main color */
+static char normfgcolor[]           = "#F5F5F5"; /* text on main color */
+static char selfgcolor[]            = "#F5F5F5"; /* text on accent color */
+static char selbordercolor[]        = "#F5F5F5"; /* main border color */
+static char selbgcolor[]            = "#6A9FB5"; /* main color */
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
