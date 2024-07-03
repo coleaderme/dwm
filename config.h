@@ -27,7 +27,7 @@ static char normbgcolor[]           = "#151515"; /* accent color */
 static char normbordercolor[]       = "#505050"; /* inactive windows border */
 static char normfgcolor[]           = "#F5F5F5"; /* text on main color */
 static char selfgcolor[]            = "#F5F5F5"; /* text on accent color */
-static char selbordercolor[]        = "#F5F5F5"; /* main border color */
+static char selbordercolor[]        = "#808080"; /* main border color */
 static char selbgcolor[]            = "#6A9FB5"; /* main color */
 static char *colors[][3] = {
        /*               fg           bg           border   */
