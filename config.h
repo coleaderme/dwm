@@ -2,7 +2,7 @@
 
 /* Constants */
 #define TERMINAL "st"
-#define TERMINAL2 "xfce4-terminal" /* xfce4-terminal can be added as 2nd terminal */
+#define TERMINAL2 "alacritty" /* xfce4-terminal can be added as 2nd terminal */
 #define TERMCLASS "St"
 #define BROWSER "chromium"
 #define EDITOR "subl"
@@ -21,8 +21,8 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]                = { "Inconsolata-SemiCondensedSemiBold:style=Semi Condensed SemiBold:size=12:antialias=true:autohint=false" };
-static const char dmenufont[]       = "Inconsolata-SemiCondensedSemiBold:style=Semi Condensed SemiBold:size=12:antialias=true:autohint=false";
+static char *fonts[]                = { "UbuntuMono:style=bold:size=10:antialias=true:autohint=true" };
+static const char dmenufont[]       =   "UbuntuMono:style=bold:size=10:antialias=true:autohint=true";
 static char normbgcolor[]           = "#151515"; /* accent color */
 static char normbordercolor[]       = "#505050"; /* inactive windows border */
 static char normfgcolor[]           = "#F5F5F5"; /* text on main color */
